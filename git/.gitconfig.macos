@@ -1,0 +1,3 @@
+[core]
+    sshCommand = ssh
+    editor = code --wait

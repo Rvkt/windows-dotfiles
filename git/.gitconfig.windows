@@ -1,0 +1,10 @@
+[core]
+    # 🔑 Use specific SSH executable
+    sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+
+    # ✏️ Default text editor
+    editor = notepad
+
+[credential]
+    # 🔐 Windows Git Credential Manager
+    helper = manager
