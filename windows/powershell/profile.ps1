@@ -20,7 +20,7 @@ if ($host.Name -eq 'ConsoleHost') {
 # -------------------------------------------------------
 # 2. Oh My Posh (safe init)
 # -------------------------------------------------------
-$OmpThemePath = "C:\Users\Rvknt\.dotfiles\windows\powershell\omp-themes\pwshTheme.omp.json"
+$OmpThemePath = "$env:USERPROFILE\.dotfiles\windows\powershell\omp-themes\pwshTheme.omp.json"
 
 if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
     try {
