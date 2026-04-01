@@ -112,7 +112,17 @@
     open     = "!git remote get-url origin | xargs -r start"
     al       = "!git config --get-regexp ^alias\\\\."
     type     = cat .git/config
-[include]
-	path = ~/.gitconfig.windows
-	path = ~/.gitconfig.wsl
-	path = ~/.gitconfig.macos
+# -------------------------------------------------------
+# ⚠️  FIXED: was [include] — loaded ALL platforms always.
+#     Now uses [includeIf] — only loads the matching OS.
+#     Rule: last value wins, so platform include must come
+#     AFTER the base [core] settings above.
+# -------------------------------------------------------
+[includeIf "gitdir/i:C:/"]
+    path = ~/.gitconfig.windows
+
+[includeIf "gitdir:/home/"]
+    path = ~/.gitconfig.wsl
+
+[includeIf "gitdir:/Users/"]
+    path = ~/.gitconfig.macos

@@ -1,10 +1,20 @@
-[core]
-    # 🔑 Use specific SSH executable
-    sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+# ======================================
+# 🪟 GIT WINDOWS OVERRIDES
+# Loaded via [includeIf "gitdir/i:C:/"]
+# ======================================
 
-    # ✏️ Default text editor
-    editor = notepad
+[core]
+    # Windows OpenSSH — use system SSH, not Git's bundled one
+    sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+    # Notepad++ if installed, else fallback to notepad
+    editor     = notepad
+    # CRLF on checkout, LF on commit — standard for Windows
+    autocrlf   = true
 
 [credential]
-    # 🔐 Windows Git Credential Manager
+    # Windows Credential Manager — handles GH tokens, no re-auth
     helper = manager
+
+[alias]
+    # open repo in browser — `start` is Windows CMD/PowerShell only
+    open = "!git remote get-url origin | xargs -r start"
