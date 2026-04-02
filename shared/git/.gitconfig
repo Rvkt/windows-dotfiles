@@ -62,6 +62,7 @@
     # ---------------------------------------------------
     # 🌿 BRANCH MANAGEMENT
     # ---------------------------------------------------
+    br       = branch
     co       = checkout
     com       = checkout main
     cod       = checkout develop
@@ -98,7 +99,7 @@
     # ---------------------------------------------------
     f        = fetch origin
     pl       = pull
-    psu      = push -u
+    psu      = push -u --tags
     rso      = remote show origin
     sync     = "!git fetch --all --prune"
     ccl      = "!f() { git clone \"$1\" && cd \"$(basename \"$1\" .git)\"; }; f"
