@@ -99,6 +99,7 @@
     # ---------------------------------------------------
     f        = fetch origin
     pl       = pull
+    ps       = push
     psu      = push -u --tags
     rso      = remote show origin
     sync     = "!git fetch --all --prune"
