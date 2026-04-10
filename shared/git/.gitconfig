@@ -99,8 +99,8 @@
     # ---------------------------------------------------
     f        = fetch origin
     pl       = pull
-    ps       = push --tags
-    psu      = push -u --tags
+    ps       = push
+    psu      = push -u
     rso      = remote show origin
     sync     = "!git fetch --all --prune"
     ccl      = "!f() { git clone \"$1\" && cd \"$(basename \"$1\" .git)\"; }; f"
