@@ -1,9 +1,11 @@
 # =======================================================
 # SSH Agent — Auto-load wsl_ssh key
 # =======================================================
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    eval "$(ssh-agent -s)" > /dev/null 2>&1
-    ssh-add ~/.ssh/wsl_ssh > /dev/null 2>&1
+if command -v ssh-agent &>/dev/null; then
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)" > /dev/null 2>&1
+        ssh-add ~/.ssh/wsl_ssh > /dev/null 2>&1
+    fi
 fi
 
 # =======================================================
@@ -26,7 +28,7 @@ alias l='ls -CF'
 # =======================================================
 alias c='clear'
 alias cls='clear'
-alias reload='source ~/.bashrc'
+alias reload='source ~/.zshrc'
 alias dotfiles='cd ~/.dotfiles'
 
 # =======================================================
