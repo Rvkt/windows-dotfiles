@@ -1,9 +1,5 @@
-# SSH Agent — Auto-load wsl_ssh key
-# ~/.dotfiles/wsl/zsh/scripts/ssh.zsh
+export SSH_KEY="$HOME/.ssh/wsl_ssh"
 
-if command -v ssh-agent &>/dev/null; then
-    if [ -z "$SSH_AUTH_SOCK" ]; then
-        eval "$(ssh-agent -s)" > /dev/null 2>&1
-        ssh-add ~/.ssh/wsl_ssh > /dev/null 2>&1
-    fi
+if command -v keychain >/dev/null 2>&1; then
+  eval "$(keychain --eval --quiet "$SSH_KEY")"
 fi
